@@ -11,7 +11,7 @@ async def start(update, context):
     await update.message.reply_text("Welcome to the bot! Please send the first image")
 
 
-async def handle_photo(update, context: CallbackContext):
+async def handle_photo(update, conpyttext: CallbackContext):
     global first_photo_received
     user: User = update.message.from_user
     directory = str(user.id)

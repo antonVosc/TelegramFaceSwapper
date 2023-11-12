@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
+requests_url = None
+
 def get_url():
     page = urlopen("https://www.faceswapper.app/")
     soup = BeautifulSoup(page.read())
@@ -9,11 +11,10 @@ def get_url():
     text = tag.text.split(";")
 
     for i in text:
-        i = str(i)
+        if "status" in i:
+             text = i.split("'")
+             request_url = text[-6]
 
-        if "a='swapper/" in i:
-            text = i.split("'")
-            request_url = text[3]
 
     request_url = "https://"+request_url+".ngrok-free.app/swapper/api.php"
 

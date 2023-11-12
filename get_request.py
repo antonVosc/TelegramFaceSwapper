@@ -9,9 +9,11 @@ def get_url():
     text = tag.text.split(";")
 
     for i in text:
-        if 'photoForm' in i:
+        i = str(i)
+
+        if "a='swapper/" in i:
             text = i.split("'")
-            request_url = text[-2]
+            request_url = text[3]
 
     request_url = "https://"+request_url+".ngrok-free.app/swapper/api.php"
 

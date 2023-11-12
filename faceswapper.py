@@ -68,7 +68,7 @@ def face_swap(directory):
         data = data.replace("\/", "/")
         data = data.replace('"}', '')
         decoded_data = pybase64.b64decode(data)
-        img_file = open(f"{directory}/d.jpeg", 'wb')
+        img_file = open(f"{directory}/image.jpeg", 'wb')
         img_file.write(decoded_data)
         img_file.close()
     except requests.exceptions.RequestException:

@@ -4,7 +4,7 @@ import os
 from faceswapper import face_swap
 
 first_photo_received = False
-TOKEN = "6635237536:AAHybPJXN8jZTN0D2DlusiQQcVvcSTX1gHE"
+TOKEN = "YOUR TELEGRAM TOKEN HERE"
 
 async def start(update, context):
     await update.message.reply_text("Welcome to the bot! Please send the first image")
